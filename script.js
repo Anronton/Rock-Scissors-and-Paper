@@ -25,7 +25,9 @@
         let round = 0;
 
         function playRound(playerSelection, computerSelection) {
-        
+            playerSelection = playerSelection.toLowerCase();
+            computerSelection = computerSelection.toLowerCase();
+
             if ((playerSelection == "Rock" && computerSelection == "Scissors") || 
             (playerSelection == "Scissors" && computerSelection == "Paper") ||
             (playerSelection == "Paper" && computerSelection == "Rock")) {
@@ -39,7 +41,7 @@
         }
         
         for(let i = 0; i < 5; i++) {
-            let playerSelection = window.prompt("Rock, Scissors or Paper?","");
+            let playerSelection = prompt("Rock, Scissors or Paper?","");
             const computerSelection = getComputerChoice();
             const result = playRound(playerSelection, computerSelection);
 
