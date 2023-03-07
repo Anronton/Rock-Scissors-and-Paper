@@ -28,9 +28,9 @@
             playerSelection = playerSelection.toLowerCase();
             computerSelection = computerSelection.toLowerCase();
 
-            if ((playerSelection == "Rock" && computerSelection == "Scissors") || 
-            (playerSelection == "Scissors" && computerSelection == "Paper") ||
-            (playerSelection == "Paper" && computerSelection == "Rock")) {
+            if ((playerSelection == "rock" && computerSelection == "scissors") || 
+            (playerSelection == "scissors" && computerSelection == "paper") ||
+            (playerSelection == "paper" && computerSelection == "rock")) {
                 return `You Win, ${playerSelection} beats ${computerSelection}!`
             }
             else if (playerSelection == computerSelection) {
