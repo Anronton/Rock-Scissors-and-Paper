@@ -1,5 +1,8 @@
 
 
+
+
+
         function getComputerChoice(){
             const randNum = Math.floor(Math.random() * 3) + 1;
 
@@ -15,15 +18,17 @@
             }
         }
 
-        let playerSelection = "Rock";
+       
         const computerSelection = getComputerChoice();
-
+        let playerScore = 0;
+        let computerScore = 0;
+        let round = 0;
 
         function playRound(playerSelection, computerSelection) {
         
-            if ((playerSelection == "rock" && computerSelection == "scissors") || 
-            (playerSelection == "scissors" && computerSelection == "paper") ||
-            (playerSelection == "paper" && computerSelection == "rock")) {
+            if ((playerSelection == "Rock" && computerSelection == "Scissors") || 
+            (playerSelection == "Scissors" && computerSelection == "Paper") ||
+            (playerSelection == "Paper" && computerSelection == "Rock")) {
                 return `You Win, ${playerSelection} beats ${computerSelection}!`
             }
             else if (playerSelection == computerSelection) {
@@ -33,9 +38,20 @@
             }
         }
         
+        for(let i = 0; i < 5; i++) {
+            let playerSelection = window.prompt("Rock, Scissors or Paper?","");
+            const computerSelection = getComputerChoice();
+            const result = playRound(playerSelection, computerSelection);
 
-         
-        console.log(playRound(playerSelection, computerSelection));
+            if (result.startsWith("You Win")) {
+                playerScore++;
+            } else if (result.startsWith("You Lose")) {
+                computerScore++;
+            }
 
-        //*function game();*/
-        
+            round++;
+            console.log(`Round ${round}: ${result}`);
+
+        }
+
+        console.log(`Final Score - Player: ${playerScore}, Computer: ${computerScore}`);
