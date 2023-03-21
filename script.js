@@ -1,10 +1,28 @@
 
 
         const Rock = document.querySelector('#Rock');
+        const Paper = document.querySelector('#Paper');
+        const Scissors = document.querySelector('#Scissors');
+
         Rock.addEventListener('click', () => {
-            console.log("rock");
+            getPlayerSelection("rock");
         });
 
+        Paper.addEventListener('click', () => {
+            getPlayerSelection("paper");
+        });
+        
+        Scissors.addEventListener('click', () => {
+            getPlayerSelection("scissors");
+        });
+
+        function getPlayerSelection(selection) {
+            return selection;
+        }
+
+
+        const gameResult = document.querySelector('#result');
+        gameResult.textContent = `Round: `;
 
         function getComputerChoice(){
             const randNum = Math.floor(Math.random() * 3) + 1;
@@ -21,7 +39,7 @@
             }
         }
 
-       
+        const playerSelection = getPlayerSelection();
         const computerSelection = getComputerChoice();
         let playerScore = 0;
         let computerScore = 0;
