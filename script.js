@@ -54,6 +54,6 @@
             round++;
             console.log(`Round ${round}: ${result}`);
 
-        }*//
+        }*/
 
         console.log(`Final Score - Player: ${playerScore}, Computer: ${computerScore}`);
