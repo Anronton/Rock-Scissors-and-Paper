@@ -40,7 +40,7 @@
             }
         }
         
-        for(let i = 0; i < 5; i++) {
+        /*for(let i = 0; i < 5; i++) {
             let playerSelection = prompt("Rock, Scissors or Paper?","");
             const computerSelection = getComputerChoice();
             const result = playRound(playerSelection, computerSelection);
@@ -54,6 +54,6 @@
             round++;
             console.log(`Round ${round}: ${result}`);
 
-        }
+        }*//
 
         console.log(`Final Score - Player: ${playerScore}, Computer: ${computerScore}`);
