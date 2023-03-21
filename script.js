@@ -1,6 +1,9 @@
 
 
-
+        const Rock = document.querySelector('#Rock');
+        Rock.addEventListener('click', () => {
+            console.log("rock");
+        });
 
 
         function getComputerChoice(){
@@ -54,6 +57,8 @@
             round++;
             console.log(`Round ${round}: ${result}`);
 
-        }*/
+        
 
-        console.log(`Final Score - Player: ${playerScore}, Computer: ${computerScore}`);
+        console.log(`Final Score - Player: ${playerScore}, Computer: ${computerScore}`); */
+
+
