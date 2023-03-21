@@ -3,6 +3,7 @@
         const Rock = document.querySelector('#Rock');
         const Paper = document.querySelector('#Paper');
         const Scissors = document.querySelector('#Scissors');
+        const gameResult = document.querySelector('#result');
 
         Rock.addEventListener('click', () => {
             getPlayerSelection("rock");
@@ -17,12 +18,13 @@
         });
 
         function getPlayerSelection(selection) {
-            return selection;
+            const playerSelection = selection;
+            const computerSelection = getComputerChoice();
+            const roundResult = playRound(playerSelection, computerSelection);
+
+            gameResult.textContent = `Round: ${roundResult}`;
         }
 
-
-        const gameResult = document.querySelector('#result');
-        gameResult.textContent = `Round: `;
 
         function getComputerChoice(){
             const randNum = Math.floor(Math.random() * 3) + 1;
@@ -46,7 +48,7 @@
         let round = 0;
 
         function playRound(playerSelection, computerSelection) {
-            playerSelection = playerSelection.toLowerCase();
+            //playerSelection = playerSelection.toLowerCase();
             computerSelection = computerSelection.toLowerCase();
 
             if ((playerSelection == "rock" && computerSelection == "scissors") || 
