@@ -1,0 +1,20 @@
+body {
+    background-color: bisque;
+}
+
+.selections {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+.results {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.final {
+    display: flex;
+    justify-content: center;
+}
