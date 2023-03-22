@@ -6,23 +6,29 @@
         const gameResult = document.querySelector('#result');
 
         Rock.addEventListener('click', () => {
-            getPlayerSelection("rock");
+            const playerSelection = getPlayerSelection("rock");
+            const computerSelection = getComputerChoice();
+            const result = playRound(playerSelection, computerSelection);
+            updateScore(result);
         });
 
         Paper.addEventListener('click', () => {
-            getPlayerSelection("paper");
+            const playerSelection = getPlayerSelection("paper");
+            const computerSelection = getComputerChoice();
+            const result = playRound(playerSelection, computerSelection);
+            updateScore(result);
         });
         
         Scissors.addEventListener('click', () => {
-            getPlayerSelection("scissors");
+            const playerSelection = getPlayerSelection("scissors");
+            const computerSelection = getComputerChoice();
+            const result = playRound(playerSelection, computerSelection);
+            updateScore(result);
         });
 
         function getPlayerSelection(selection) {
             const playerSelection = selection;
-            const computerSelection = getComputerChoice();
-            const roundResult = playRound(playerSelection, computerSelection);
-
-            gameResult.textContent = `Round: ${roundResult}`;
+            return playerSelection;  
         }
 
 
@@ -41,14 +47,13 @@
             }
         }
 
-        const playerSelection = getPlayerSelection();
-        const computerSelection = getComputerChoice();
+        
         let playerScore = 0;
         let computerScore = 0;
         let round = 0;
 
         function playRound(playerSelection, computerSelection) {
-            //playerSelection = playerSelection.toLowerCase();
+            
             computerSelection = computerSelection.toLowerCase();
 
             if ((playerSelection == "rock" && computerSelection == "scissors") || 
@@ -63,8 +68,8 @@
             }
         }
         
-        /*for(let i = 0; i < 5; i++) {
-            let playerSelection = prompt("Rock, Scissors or Paper?","");
+        for(let i = 0; i < 5; i++) {
+            //let playerSelection = getPlayerSelection();
             const computerSelection = getComputerChoice();
             const result = playRound(playerSelection, computerSelection);
 
@@ -76,9 +81,12 @@
 
             round++;
             console.log(`Round ${round}: ${result}`);
+            //gameResult.textContent = `Round: ${round}`;
+            //gameResult.textContent += `\nFinal Score - Player: ${playerScore}, Computer: ${computerScore}`; 
 
+        }
         
 
-        console.log(`Final Score - Player: ${playerScore}, Computer: ${computerScore}`); */
+         
 
 
